@@ -10,12 +10,12 @@
 	<script>
 		function secondHighest(arr) {
 			arr.sort((a, b) => a - b); 
-		return arr[arr.length - 2];
+		return arr.length >= 2 ? arr[arr.length - 2] : Infinity;
 			
 		}
 
 		function Main() {
-			var n = prompt("Enter the number of elements");
+			// var n = prompt("Enter the number of elements");
 			var arr = [];
 			for (var i = 0; i < n; i++) {
 				arr[i] = prompt("Enter element " + (i+1));

@@ -9,14 +9,25 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
-			aconst unique = [...new Set(arr)];
+			const unique = [...new Set(arr)];
 
-	if (unique.length < 2) {
-		return -Infinity;
+	// Return -Infinity if less than 2 distinct values
+	if (unique.length < 2) return -Infinity;
+
+	// Find the highest and second highest manually
+	let max = -Infinity;
+	let second = -Infinity;
+
+	for (let num of unique) {
+		if (num > max) {
+			second = max;
+			max = num;
+		} else if (num > second) {
+			second = num;
+		}
 	}
 
-	unique.sort((a, b) => b - a);
-	return unique[1];
+	return second;
 			
 		}
 
